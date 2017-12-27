@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour {
 	public GameObject bulletObj;
 	public int speed;
 	public int charges;
+	public int chargeIncrement;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,10 @@ public class Weapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void IncrementCharge() {
+		charges += chargeIncrement;
 	}
 
 	public int GetBulletCount() {
