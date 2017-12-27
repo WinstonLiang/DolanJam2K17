@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour {
 	public GameObject bulletObj;
 	public int speed;
 	public int charges;
+	public int chargeIncrement;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,10 @@ public class Weapon : MonoBehaviour {
 		Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         dir.Normalize();
 	    transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
+	}
+
+	public void IncrementCharge() {
+		charges += chargeIncrement;
 	}
 
 	public int GetBulletCount() {

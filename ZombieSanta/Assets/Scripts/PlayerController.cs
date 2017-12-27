@@ -123,4 +123,17 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+
+
+	void OnTriggerEnter2D(Collider2D col){
+		foreach (Transform weapon in transform){
+			if (col.transform.tag == weapon.tag) {
+				weapon.gameObject.GetComponent<Weapon> ().IncrementCharge (); 
+				Destroy (col.transform.gameObject);
+			}
+
+		}
+
+	}
 }
+			
