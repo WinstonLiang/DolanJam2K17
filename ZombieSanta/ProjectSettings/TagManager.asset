@@ -24,11 +24,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Obstacle
+  - Weapon
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -49,9 +49,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2274708409
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3731415023
+    locked: 0
   - name: Weapons
     uniqueID: 3193623843
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 3472790331
+    locked: 0
+  - name: Player
+    uniqueID: 2045752359
     locked: 0
