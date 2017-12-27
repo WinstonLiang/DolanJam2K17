@@ -18,7 +18,8 @@ public class MilkGun : Weapon {
 		if(charges > 0) {
 			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         	dir.Normalize();
-	        GameObject bullet = Instantiate(bulletObj, transform.position, Quaternion.identity) as GameObject;
+        	Vector2 targetPos = dir + new Vector2(transform.position.x, transform.position.y);
+	        GameObject bullet = Instantiate(bulletObj, targetPos, Quaternion.identity) as GameObject;
 	        bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
 	        charges--;
 	    }

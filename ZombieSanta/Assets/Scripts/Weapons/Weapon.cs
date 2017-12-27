@@ -34,8 +34,9 @@ public class Weapon : MonoBehaviour {
 		Debug.Log("Default attack");
 		if(charges > 0) {
 			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-	        dir.Normalize();
-	        GameObject bullet = Instantiate(bulletObj, transform.position, Quaternion.identity) as GameObject;
+        	dir.Normalize();
+        	Vector2 targetPos = dir + new Vector2(transform.position.x, transform.position.y);
+	        GameObject bullet = Instantiate(bulletObj, targetPos, Quaternion.identity) as GameObject;
 	        bullet.GetComponent<Rigidbody2D>().velocity = dir * speed;
 	        charges--;
 	    }
