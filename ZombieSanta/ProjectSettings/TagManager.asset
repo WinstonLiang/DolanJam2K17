@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerUI
+  - CandyIcon
+  - MilkIcon
+  - SnowballIcon
+  - GrenadeIcon
+  - WeaponIcons
+  - FadeOutImage
   layers:
   - Default
   - TransparentFX
@@ -38,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Weapons
+    uniqueID: 3193623843
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

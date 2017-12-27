@@ -15,20 +15,22 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	protected virtual void Update () {
+		Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        dir.Normalize();
+	    transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
 	}
 
 	public int GetBulletCount() {
 		return charges;
 	}
 
-	public virtual void Attack(Vector3 playerPos) {
+	public virtual void Attack() {
 		Debug.Log("Default attack");
 		if(charges > 0) {
-			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerPos;
+			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 	        dir.Normalize();
-	        GameObject bullet = Instantiate(bulletObj, playerPos, Quaternion.identity) as GameObject;
+	        GameObject bullet = Instantiate(bulletObj, transform.position, Quaternion.identity) as GameObject;
 	        bullet.GetComponent<Rigidbody2D>().velocity = dir * speed;
 	        charges--;
 	    }

@@ -10,16 +10,15 @@ public class MilkGun : Weapon {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	protected override void Update () {
+		base.Update();
 	}
 
-	public override void Attack(Vector3 playerPos) {
+	public override void Attack() {
 		if(charges > 0) {
-			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerPos;
+			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         	dir.Normalize();
-			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-	        GameObject bullet = Instantiate(bulletObj, playerPos, Quaternion.identity) as GameObject;
+	        GameObject bullet = Instantiate(bulletObj, transform.position, Quaternion.identity) as GameObject;
 	        bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
 	        charges--;
 	    }

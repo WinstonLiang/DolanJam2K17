@@ -5,26 +5,25 @@ using UnityEngine;
 public class SnowballGun : Weapon {
 
 	private bool attacking;
-	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
+		base.Update();
 	}
 
 	IEnumerator Attacking() {
    		while(attacking && charges > 0) {
-   			base.Attack(player.transform.position);
+   			base.Attack();
 	        yield return new WaitForSeconds(.8f);
    		}
 	}
 
 	// Candy cane attack
-	public override void Attack(Vector3 playerPos) {
+	public override void Attack() {
 		attacking = true;
 		StartCoroutine("Attacking");
 	}
