@@ -91,16 +91,16 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.gameObject.CompareTag("Candy Cane")) {
-			col.gameObject.SetActive(false);
-		}
-		if (col.gameObject.CompareTag("SnowBall")) {
-			col.gameObject.SetActive(false);
-		}
-		if (col.gameObject.CompareTag("Milk")) {
-			col.gameObject.SetActive(false);
+		foreach (Transform weapon in transform){
+			if (col.transform.tag == weapon.tag) {
+				weapon.gameObject.GetComponent<Weapon> ().IncrementCharge (); 
+				Destroy (col.transform.gameObject);
+			}
+
 		}
 
 	}
 }
+			
