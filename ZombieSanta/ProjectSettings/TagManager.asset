@@ -11,6 +11,10 @@ TagManager:
   - GrenadeIcon
   - WeaponIcons
   - FadeOutImage
+  - Candy Cane
+  - Milk
+  - Snowball
+  - Grenade
   layers:
   - Default
   - TransparentFX

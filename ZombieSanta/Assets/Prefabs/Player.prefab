@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212568289343798708}
   m_Layer: 0
   m_Name: SnowballGun
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114803983080157276}
   m_Layer: 0
   m_Name: GrenadeGun
-  m_TagString: Untagged
+  m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 212431326924906734}
   m_Layer: 0
   m_Name: MilkGun
-  m_TagString: Untagged
+  m_TagString: Milk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 212498664466697460}
   m_Layer: 0
   m_Name: CandyCaneGun
-  m_TagString: Untagged
+  m_TagString: Candy Cane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,6 +221,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1407587492636252, guid: 8f75fdf2a126142178cbecc25f454664, type: 2}
   speed: 10
   charges: 11
+  chargeIncrement: 0
 --- !u!114 &114582145897412840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +236,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1395116576444876, guid: b12b1d681dab7453e80247bbf4be724a, type: 2}
   speed: 0
   charges: 12
+  chargeIncrement: 0
 --- !u!114 &114596730523560248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,6 +251,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
   speed: 10
   charges: 10
+  chargeIncrement: 0
 --- !u!114 &114803983080157276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +266,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1464900022685692, guid: 05875a6fe7dde42b7b040df047683542, type: 2}
   speed: 0
   charges: 10
+  chargeIncrement: 0
 --- !u!212 &212234893737504146
 SpriteRenderer:
   m_ObjectHideFlags: 1
