@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4070061658032902}
   - component: {fileID: 114179309578812150}
   - component: {fileID: 212568289343798708}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SnowballGun
   m_TagString: Snowball
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4313250009060192}
   - component: {fileID: 114582145897412840}
   - component: {fileID: 212431326924906734}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MilkGun
   m_TagString: Milk
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4733995835489552}
   - component: {fileID: 114596730523560248}
   - component: {fileID: 212498664466697460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CandyCaneGun
   m_TagString: Candy Cane
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 212234893737504146}
   - component: {fileID: 50219481231740958}
   - component: {fileID: 114035111362563404}
-  m_Layer: 0
+  - component: {fileID: 61460763711788578}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -143,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499890976712918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95770466, y: -0.3470449, z: -0.024843452}
+  m_LocalPosition: {x: -7.7045207, y: 2.0643797, z: -0.024843452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070061658032902}
@@ -186,6 +187,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61460763711788578
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499890976712918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.05}
+    newSize: {x: 1, y: 1.05}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.05}
+  m_EdgeRadius: 0
 --- !u!114 &114035111362563404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +247,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1407587492636252, guid: 8f75fdf2a126142178cbecc25f454664, type: 2}
   speed: 10
   charges: 11
-  chargeIncrement: 0
+  chargeIncrement: 5
 --- !u!114 &114582145897412840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +262,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1395116576444876, guid: b12b1d681dab7453e80247bbf4be724a, type: 2}
   speed: 0
   charges: 12
-  chargeIncrement: 0
+  chargeIncrement: 5
 --- !u!114 &114596730523560248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,7 +277,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
   speed: 10
   charges: 10
-  chargeIncrement: 0
+  chargeIncrement: 5
 --- !u!114 &114803983080157276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,8 +324,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2045752359
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 59a3e157a802f4af08fca2a3df9388cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
