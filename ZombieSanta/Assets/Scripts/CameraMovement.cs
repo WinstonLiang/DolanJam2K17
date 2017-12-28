@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		target = GameObject.Find ("Player").transform;		
+		target = GameObject.FindGameObjectWithTag ("Player").transform;		
 	}
 	
 	void FixedUpdate () {
