@@ -13,19 +13,14 @@ public class SnowballGun : Weapon {
 	// Update is called once per frame
 	protected override void Update () {
 		base.Update();
-	}
-
-	IEnumerator Attacking() {
-   		while(attacking && charges > 0) {
-   			base.Attack();
-	        yield return new WaitForSeconds(.8f);
-   		}
+		if(attacking && Time.time - lastAttack >= cooldown) {
+			base.Attack();
+		}
 	}
 
 	// Candy cane attack
 	public override void Attack() {
 		attacking = true;
-		StartCoroutine("Attacking");
 	}
 
 	public override void StopAttack() {

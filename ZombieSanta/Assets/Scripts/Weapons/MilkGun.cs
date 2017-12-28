@@ -15,12 +15,13 @@ public class MilkGun : Weapon {
 	}
 
 	public override void Attack() {
-		if(charges > 0) {
+		if(charges > 0 && Time.time - lastAttack >= cooldown) {
 			Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         	dir.Normalize();
         	Vector2 targetPos = dir + new Vector2(transform.position.x, transform.position.y);
 	        GameObject bullet = Instantiate(bulletObj, targetPos, Quaternion.identity) as GameObject;
 	        bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
+	        lastAttack = Time.time;
 	        charges--;
 	    }
 	}

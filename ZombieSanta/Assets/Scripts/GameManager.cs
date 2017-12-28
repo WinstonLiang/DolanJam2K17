@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	private enum FadeDirection {In, Out};
+	public int enemyCount;
 	public Image fadeOutImage;
 	public float fadeSpeed;
 
@@ -14,11 +15,20 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		fadeOutImage = GameObject.FindGameObjectWithTag("FadeOutImage").GetComponent<Image>();
 		StartCoroutine(Fade(FadeDirection.Out));
+		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
+			InitLvl1();
+		}
+		//InitLvl1();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	private void InitLvl1() {
+		//Debug.Log("cry");
+		GetComponent<Spawner>().SpawnEnemies();		
 	}
 
 	public void SwitchScene(int lvl) {

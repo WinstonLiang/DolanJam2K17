@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Milk : MonoBehaviour {
+[System.Serializable]
+public class Milk : ProjectileAttack {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
-	void Update () {
-		
+	protected override void Update () {
+		base.Update();
+	}
+
+	protected override void OnCollisionEnter2D(Collision2D other) {
+		// do nothing
 	}
 }

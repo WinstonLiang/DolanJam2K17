@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 50219481231740958}
   - component: {fileID: 114035111362563404}
   - component: {fileID: 61460763711788578}
+  - component: {fileID: 114376972738435868}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -131,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252647357615206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5662936, y: -0.48360288, z: -0.14666633}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4695814804625026}
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499890976712918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7045207, y: 2.0643797, z: -0.024843452}
+  m_LocalPosition: {x: -0.21, y: -0.34, z: -0.024843452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070061658032902}
@@ -178,15 +179,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61460763711788578
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -223,13 +224,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704c72e1b031e474fab85359fde91c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   weapons:
   - {fileID: 1397900054269608}
   - {fileID: 1283875655519544}
   - {fileID: 1242355928338962}
   - {fileID: 1252647357615206}
   weaponIcons:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -248,6 +250,19 @@ MonoBehaviour:
   speed: 10
   charges: 11
   chargeIncrement: 5
+  cooldown: 0.1
+--- !u!114 &114376972738435868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499890976712918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3656652e62444a285308eed3e9508f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &114582145897412840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +278,7 @@ MonoBehaviour:
   speed: 0
   charges: 12
   chargeIncrement: 5
+  cooldown: 2
 --- !u!114 &114596730523560248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +294,7 @@ MonoBehaviour:
   speed: 10
   charges: 10
   chargeIncrement: 5
+  cooldown: 1
 --- !u!114 &114803983080157276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,9 +307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1464900022685692, guid: 05875a6fe7dde42b7b040df047683542, type: 2}
-  speed: 0
+  speed: 4
   charges: 10
-  chargeIncrement: 0
+  chargeIncrement: 2
+  cooldown: 2
 --- !u!212 &212234893737504146
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -371,7 +389,7 @@ SpriteRenderer:
   m_SortingLayerID: -1101343453
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c033d007c64d04460b98807be012eac5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf76316a8fca3df4fa528eb8cc73a1d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -415,7 +433,7 @@ SpriteRenderer:
   m_SortingLayerID: -1101343453
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 27149fe1dc7194032845b69f8bed5b37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0b3ca0016b9fb34ca0ef048ac864b65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -459,7 +477,7 @@ SpriteRenderer:
   m_SortingLayerID: -1101343453
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b56f706e4aa041e1a0567c879d020fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8878483cd03c4934fb307dcf6d77e12b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

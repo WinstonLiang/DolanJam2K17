@@ -15,6 +15,9 @@ TagManager:
   - Milk
   - Snowball
   - Grenade
+  - Enemy
+  - GameManager
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
