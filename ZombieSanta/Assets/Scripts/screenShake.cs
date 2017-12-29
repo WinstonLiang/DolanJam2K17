@@ -51,7 +51,7 @@ public class screenShake : MonoBehaviour {
 			shakeTimer -= Time.deltaTime;
 		}
 		if (Input.GetKey("g")) {
-			ShakeCamera (0.3f, 0.5f);
+			ShakeCamera (1f, 0.5f);
 		}
 	}
 

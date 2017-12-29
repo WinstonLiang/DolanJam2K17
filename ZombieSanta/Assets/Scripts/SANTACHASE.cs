@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SANTACHASE : chasePlayer {
 
@@ -15,9 +16,18 @@ public class SANTACHASE : chasePlayer {
     private bool spriteSwitch = false;
     private bool thrown = false;
     private bool collider = false;
+    public Image healthBar;
+    private float maxHealth;
 
-	// Update is called once per frame
-	protected override void Update () {
+    protected override void Start()
+    {
+        maxHealth = health;
+        healthBar = GameObject.FindGameObjectWithTag("BossBar").GetComponent<Image>();
+    }
+
+    // Update is called once per frame
+    protected override void Update () {
+        healthBar.fillAmount = health / maxHealth;
         if (stomping)
         {
             if (!spriteSwitch)

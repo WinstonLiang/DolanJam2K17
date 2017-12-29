@@ -22,6 +22,7 @@ TagManager:
   - CooldownImage
   - Health
   - EnemyCount
+  - BossBar
   layers:
   - Default
   - TransparentFX

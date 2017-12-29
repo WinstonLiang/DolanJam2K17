@@ -253,6 +253,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  starting: {x: -7.6, y: -6.3}
 --- !u!114 &114037614636006020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,6 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  healthbar: {fileID: 0}
+  gameCamera: {fileID: 0}
 --- !u!114 &114582145897412840
 MonoBehaviour:
   m_ObjectHideFlags: 1

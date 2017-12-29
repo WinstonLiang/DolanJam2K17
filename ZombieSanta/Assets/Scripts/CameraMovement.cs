@@ -7,9 +7,11 @@ public class CameraMovement : MonoBehaviour {
 	public float dampTime = 0.15f;
 	private Vector3 velocity = Vector3.zero;
 	private Transform target;
+    private float shakeTimer;
+    private float shakeAmount;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;		
 	}
 	
@@ -21,5 +23,16 @@ public class CameraMovement : MonoBehaviour {
 			// Damper on the movement
 			transform.position = Vector3.SmoothDamp (transform.position, destination, ref velocity, dampTime);
 		}
-	}
+        if(shakeTimer >= 0) {
+            Vector2 shakePos = Random.insideUnitCircle * shakeAmount;
+            transform.position = new Vector3(transform.position.x + shakePos.x, transform.position.y + shakePos.y, transform.position.z);
+            shakeTimer -= Time.deltaTime;
+        }
+    }
+
+    public void ShakeCamera(float shakePower, float shakeDur)
+    {
+        shakeAmount = shakePower;
+        shakeTimer = shakeDur;
+    }
 }

@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class PlayerStatsManager : MonoBehaviour {
 	public float health;
 	public Image healthbar;
+    public GameObject gameCamera;
 	private GameObject gameManager;
 	private float maxHealth;
 
 	// Use this for initialization
 	void Start () {
+        gameCamera = GameObject.FindGameObjectWithTag("MainCamera");
         maxHealth = health;
 	}
 
@@ -34,6 +36,7 @@ public class PlayerStatsManager : MonoBehaviour {
 	}
 
 	void ApplyDamage(int dmg) {
+        gameCamera.GetComponent<CameraMovement>().ShakeCamera(0.5f, 0.3f);
 		health -= dmg;
 		StartCoroutine("TriggerInvisibility");
 
