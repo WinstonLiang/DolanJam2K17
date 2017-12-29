@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		Move();
 		UpdateWeaponSelection();
-		UpdateBulletCounters();
+		UpdateBulletCountersAndCooldown();
 		Attack();
 	}
 
@@ -111,9 +111,22 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	private void UpdateBulletCounters() {
+	private void UpdateBulletCountersAndCooldown() {
 		for(int i = 0; i < weaponIcons.Length; i++) {
-			weaponIcons[i].gameObject.transform.GetChild(0).GetComponent<Text>().text = weapons[i].GetComponent<Weapon>().GetBulletCount().ToString();
+			foreach(Transform child in weaponIcons[i].gameObject.transform) {
+				if(child.gameObject.tag == "CooldownImage") {
+					float timeLeft = weapons[i].GetComponent<Weapon>().GetTimeLeft();
+					if(timeLeft > 0 && i != 2) {
+						child.GetComponent<Image>().fillAmount = 1 - weapons[i].GetComponent<Weapon>().GetTimeLeft();
+					}
+					else {
+						child.GetComponent<Image>().fillAmount = 0;						
+					}
+				}
+				else {
+					child.GetComponent<Text>().text = weapons[i].GetComponent<Weapon>().GetBulletCount().ToString();
+				}
+			}
 		}
 	}
 

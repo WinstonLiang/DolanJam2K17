@@ -18,6 +18,8 @@ TagManager:
   - Enemy
   - GameManager
   - EnemyAttack
+  - ImageText
+  - CooldownImage
   layers:
   - Default
   - TransparentFX

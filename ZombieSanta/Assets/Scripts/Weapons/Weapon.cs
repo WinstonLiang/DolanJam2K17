@@ -16,8 +16,12 @@ public class Weapon : MonoBehaviour {
 	void Start () {
 	}
 
-	public float getTimeLeft() {
-		return Time.time - lastAttack >= cooldown ? 0f : Time.time - lastAttack;
+	public float GetTimeLeft() {
+		if(lastAttack == 0) {
+			return 0;
+		}
+		float total = Time.time - lastAttack >= cooldown ? 0f : Time.time - lastAttack;
+		return total/cooldown;
 	}
 	
 	// Update is called once per frame

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerStatsManager : MonoBehaviour {
 	public int health;
+	public Image healthbar;
 	private GameObject gameManager;
 
 	// Use this for initialization
