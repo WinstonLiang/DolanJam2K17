@@ -111,7 +111,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
 --- !u!58 &58956758517837972
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
 --- !u!61 &61725642344770588
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -185,6 +185,7 @@ MonoBehaviour:
   speed: 2
   aggro: 0
   health: 15
+  pickups: []
 --- !u!114 &114427846327193360
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   target: Enemy
-  ttl: 1
+  ttl: 0.3
 --- !u!198 &198658536486796300
 ParticleSystem:
   m_ObjectHideFlags: 1

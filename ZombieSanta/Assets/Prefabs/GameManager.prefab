@@ -65,6 +65,8 @@ MonoBehaviour:
   - {fileID: 1507161537440356, guid: c9bcf8dc6295d9449aa861bfd09fed47, type: 2}
   enemyCounts: 0100000001000000010000000100000001000000
   mapBounds: {fileID: 0}
+  deathsplosion: {fileID: 1408642092104910, guid: f3ccbaa0720690a4690979c5fc136bfb,
+    type: 2}
 --- !u!114 &114964047656988976
 MonoBehaviour:
   m_ObjectHideFlags: 1

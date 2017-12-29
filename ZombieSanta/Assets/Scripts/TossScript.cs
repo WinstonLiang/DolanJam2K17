@@ -16,14 +16,14 @@ public class TossScript : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         flyTime += Random.Range(-0.15f,0.15f);
-        x = target.position.x - gameObject.transform.position.x;
-        y = target.position.y - gameObject.transform.position.y + 12;
+        x = target.position.x - gameObject.transform.position.x + Random.Range(-1,1);
+        y = target.position.y - gameObject.transform.position.y + 12 + Random.Range(-1,1);
         if (x >= 20)
             x = 20;
         if (x <= -20)
             x = -20;
-        if (y >= 20)
-            y = 20;
+        if (y >= 15)
+            y = 15;
         if (y <= 0)
             y = 0;
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(
