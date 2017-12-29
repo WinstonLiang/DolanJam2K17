@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 	public int enemyCount;
 	public Image fadeOutImage;
 	public float fadeSpeed;
+	private Text countText;
 
 	// Use this for initialization
 	void Start () {
@@ -18,17 +19,31 @@ public class GameManager : MonoBehaviour {
 		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
 			InitLvl1();
 		}
+		if(SceneManager.GetActiveScene().buildIndex == 4) {
+			InitLvl2();
+		}
 		//InitLvl1();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
+			if(enemyCount == 0) {
+				SwitchScene(4);
+			}
+			countText.text = "Enemies: " + enemyCount.ToString();
+		}
 	}
 
 	private void InitLvl1() {
 		//Debug.Log("cry");
-		GetComponent<Spawner>().SpawnEnemies();		
+		GetComponent<Spawner>().SpawnEnemies();
+		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
+	}
+
+	private void InitLvl2() {
+		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
+		countText.enabled = false;		
 	}
 
 	public void SwitchScene(int lvl) {

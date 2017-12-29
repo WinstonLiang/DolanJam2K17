@@ -5,19 +5,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStatsManager : MonoBehaviour {
-	public int health;
+	public float health;
 	public Image healthbar;
 	private GameObject gameManager;
+	private float maxHealth;
 
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.FindGameObjectWithTag ("GameManager");
-		
+		GameObject ui = GameObject.FindGameObjectWithTag("PlayerUI");
+		foreach(Transform child in ui.transform) {
+			if(child.tag == "Health") {
+				healthbar = child.GetChild(0).gameObject.GetComponent<Image>();
+			}
+		}
+		maxHealth = health;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		healthbar.fillAmount = health/maxHealth;
 	}
 
 	void ApplyDamage(int dmg) {
