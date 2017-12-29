@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SantaScene.unity
     guid: 495113eccae3ae64680550deb183cb77
+  - enabled: 1
+    path: Assets/Scenes/WinningScene.unity
+    guid: 88c04f94d6076f342a02cfa4e86b6731

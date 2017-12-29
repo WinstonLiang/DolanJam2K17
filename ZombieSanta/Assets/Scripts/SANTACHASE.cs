@@ -8,11 +8,13 @@ public class SANTACHASE : chasePlayer {
     public float stompTime;
     public Sprite[] santaSprites;
     public GameObject[] minions;
+    public GameObject childCollider;
     private float stompTrack;
     private float pauseTrack;
     private bool stomping;
     private bool spriteSwitch = false;
     private bool thrown = false;
+    private bool collider = false;
 
 	// Update is called once per frame
 	protected override void Update () {
@@ -22,6 +24,20 @@ public class SANTACHASE : chasePlayer {
             {
                 spriteSwitch = true;
                 GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
+
+                if (collider)
+                {
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+                    childCollider.GetComponent<PolygonCollider2D>().enabled = false;
+                    collider = false;
+                }
+                else
+                {
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    childCollider.GetComponent<PolygonCollider2D>().enabled = true;
+                    collider = true;
+                }
+
             }
 
             if (!thrown)
@@ -41,7 +57,8 @@ public class SANTACHASE : chasePlayer {
             {
                 thrown = false;
                 stomping = false;
-                GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
+                spriteSwitch = false;
+                //GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
                 stompTrack = stompTime;
             }
         }

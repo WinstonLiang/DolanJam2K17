@@ -208,8 +208,7 @@ MonoBehaviour:
   chaseRange: 0
   speed: 5
   aggro: 0
-  health: 4
-  pickups: []
+  health: 6
 --- !u!212 &212422239069539944
 SpriteRenderer:
   m_ObjectHideFlags: 1

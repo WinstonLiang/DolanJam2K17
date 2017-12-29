@@ -557,27 +557,27 @@ Prefab:
     - target: {fileID: 114679123997175856, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8,
         type: 2}
       propertyPath: enemyCounts.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114679123997175856, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8,
         type: 2}
       propertyPath: enemyCounts.Array.data[1]
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114679123997175856, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8,
         type: 2}
       propertyPath: enemyCounts.Array.data[2]
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114679123997175856, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8,
         type: 2}
       propertyPath: enemyCounts.Array.data[3]
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114679123997175856, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8,
         type: 2}
       propertyPath: enemyCounts.Array.data[4]
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6cb17acdbe2f4aefb96a8f84a9bebc8, type: 2}
