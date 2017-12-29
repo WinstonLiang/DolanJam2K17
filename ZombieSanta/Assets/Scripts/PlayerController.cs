@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public Image[] weaponIcons;
 
 	private int selectedWeapon;
-	private bool facingLeft;	
+	private bool facingLeft;
 
 	// Use this for initialization
 	void Start () {
@@ -67,12 +67,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Move() {
-		float xMovement = Input.GetAxis("Horizontal") * speed;
-		float yMovement = Input.GetAxis("Vertical") * speed;
-		GetComponent<Rigidbody2D>().velocity = new Vector2(xMovement, yMovement);
-		if(GetComponent<Rigidbody2D>().velocity == Vector2.zero) {
+		float xMovement = Input.GetAxis("Horizontal");
+		float yMovement = Input.GetAxis("Vertical");
+		GetComponent<Rigidbody2D>().velocity = new Vector2(xMovement * speed, yMovement * speed);
+		if(Math.Abs(xMovement) < .3f && Math.Abs(yMovement) < .3f) {
 			GetComponent<Animator>().SetBool("moving", false);
-		}		
+		}
+		else {
+			GetComponent<Animator>().SetBool("moving", true);
+		}
 
 		// Flip sprite if the player goes the opposite direction from before
 		if(xMovement > 0 && facingLeft || xMovement < 0 && !facingLeft) {

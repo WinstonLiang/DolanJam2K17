@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4556499784140130}
   - component: {fileID: 212435572967542866}
-  - component: {fileID: 114822312887981906}
   - component: {fileID: 61223508190081826}
   - component: {fileID: 58788080115351378}
   - component: {fileID: 50914971593204010}
   - component: {fileID: 114869791559307730}
   - component: {fileID: 95836592306658764}
+  - component: {fileID: 114924640411921520}
   m_Layer: 12
   m_Name: Penguin
   m_TagString: Enemy
@@ -180,23 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a656279361c44d51b19b5f3758453c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114822312887981906
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370573998278800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5566f809510bac34fa73115fff3e2b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  chaseRange: 0
-  speed: 2
-  aggro: 0
-  health: 2
-  pickups: []
 --- !u!114 &114869791559307730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,6 +193,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   target: Player
+--- !u!114 &114924640411921520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370573998278800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f0219c7206647ff93dffd07431ee45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  chaseRange: 0
+  speed: 2
+  aggro: 0
+  health: 4
+  slideCD: 10
+  slideLength: 5
+  slideSpeed: 10
 --- !u!212 &212435572967542866
 SpriteRenderer:
   m_ObjectHideFlags: 1
