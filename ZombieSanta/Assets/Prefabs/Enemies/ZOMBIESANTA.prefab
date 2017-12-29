@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf472c287ff204414877af7b50a53a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
-  target: 
+  dmg: 1
+  target: Player
 --- !u!114 &114740504453930198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +75,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2fc207d1328dbba48ba9b48c8d539681, type: 3}
   minions:
   - {fileID: 1502164344822326, guid: 9121e977e325eb54ab4c422a47694fbb, type: 2}
+  - {fileID: 1635675828994566, guid: 82a5621bd8baaaf46867a01a9a15700e, type: 2}
+  - {fileID: 1532091040978056, guid: f831125bb227ab2459c024d38e289283, type: 2}
+  - {fileID: 1177700291358598, guid: 48ba2c0e6899e664aab43dc70b2a2008, type: 2}
+  - {fileID: 1064726213613260, guid: e091fdf77c3b5c9449f58f43dd727185, type: 2}
 --- !u!212 &212516213276033992
 SpriteRenderer:
   m_ObjectHideFlags: 1
