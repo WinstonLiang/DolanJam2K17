@@ -29,14 +29,9 @@ public class GrenadeAttack : ProjectileAttack {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.tag == target) {
-			other.gameObject.SendMessage("ApplyDamage", dmg);
-			if(!destroyTriggered) {
-				destroyTriggered = true;
-				GetComponent<CircleCollider2D>().enabled = true;
-				GetComponent<SpriteRenderer>().enabled = false;
-				GetComponent<ParticleSystem>().Play();
-				Destroy(gameObject, 1f);
+		if(destroyTriggered) {
+			if(other.gameObject.tag == target) {
+				other.gameObject.SendMessage("ApplyDamage", dmg);
 			}
 		}
 	}
