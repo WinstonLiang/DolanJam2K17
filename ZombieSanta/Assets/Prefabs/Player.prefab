@@ -283,8 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1407587492636252, guid: 8f75fdf2a126142178cbecc25f454664, type: 2}
   speed: 10
-  charges: 30
-  chargeIncrement: 20
+  charges: 50
+  chargeIncrement: 30
   cooldown: 0.1
 --- !u!114 &114376972738435868
 MonoBehaviour:
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1395116576444876, guid: b12b1d681dab7453e80247bbf4be724a, type: 2}
   speed: 0
-  charges: 15
-  chargeIncrement: 5
+  charges: 10
+  chargeIncrement: 3
   cooldown: 1.5
 --- !u!114 &114803983080157276
 MonoBehaviour:
