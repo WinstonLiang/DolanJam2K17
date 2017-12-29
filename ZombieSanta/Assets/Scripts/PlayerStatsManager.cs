@@ -13,12 +13,12 @@ public class PlayerStatsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        gameCamera = GameObject.FindGameObjectWithTag("MainCamera");
         maxHealth = health;
 	}
 
     public void Init()
     {
+        gameCamera = GameObject.FindGameObjectWithTag("MainCamera");
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
         GameObject ui = GameObject.FindGameObjectWithTag("PlayerUI");
         foreach (Transform child in ui.transform)
