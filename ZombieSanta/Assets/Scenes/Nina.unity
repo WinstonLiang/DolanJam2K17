@@ -368,6 +368,11 @@ Prefab:
       propertyPath: weaponIcons.Array.data[3]
       value: 
       objectReference: {fileID: 1278833332}
+    - target: {fileID: 95305096571063126, guid: b2840ba3cec1144d9a59a76535817e66,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03d0a26e7f4564ad1a1d62cc0eee7d41, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2840ba3cec1144d9a59a76535817e66, type: 2}
   m_IsPrefabParent: 0

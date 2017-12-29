@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 		}
-		facingLeft = true;
+		facingLeft = false;
 		selectedWeapon = 0;
 		for(int i = 1; i < weapons.Length; i++) {
 			weapons[i].GetComponent<SpriteRenderer>().enabled = false;
@@ -70,6 +70,9 @@ public class PlayerController : MonoBehaviour {
 		float xMovement = Input.GetAxis("Horizontal") * speed;
 		float yMovement = Input.GetAxis("Vertical") * speed;
 		GetComponent<Rigidbody2D>().velocity = new Vector2(xMovement, yMovement);
+		if(GetComponent<Rigidbody2D>().velocity == Vector2.zero) {
+			GetComponent<Animator>().SetBool("moving", false);
+		}		
 
 		// Flip sprite if the player goes the opposite direction from before
 		if(xMovement > 0 && facingLeft || xMovement < 0 && !facingLeft) {
