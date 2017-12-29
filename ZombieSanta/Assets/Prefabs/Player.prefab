@@ -254,6 +254,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   starting: {x: -7.6, y: -6.3}
+  pg: {fileID: 9100000, guid: 03d0a26e7f4564ad1a1d62cc0eee7d41, type: 2}
+  h: {fileID: 9100000, guid: 7c4e3a2df9d2b41dca3e84942ad8ff89, type: 2}
 --- !u!114 &114037614636006020
 MonoBehaviour:
   m_ObjectHideFlags: 1

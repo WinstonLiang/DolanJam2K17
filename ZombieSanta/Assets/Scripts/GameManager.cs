@@ -11,11 +11,23 @@ public class GameManager : MonoBehaviour {
 	public Image fadeOutImage;
 	public float fadeSpeed;
 	private Text countText;
+	private GameObject tracker;
 
 	// Use this for initialization
 	void Start () {
 		fadeOutImage = GameObject.FindGameObjectWithTag("FadeOutImage").GetComponent<Image>();
 		StartCoroutine(Fade(FadeDirection.Out));
+		//InitLvl1();
+	}
+
+	void Awake() {
+		tracker = GameObject.FindGameObjectWithTag("Tracker");
+		if(!tracker.GetComponent<Tracker>().unlocked && SceneManager.GetActiveScene().buildIndex == 0) {
+			GameObject.FindGameObjectWithTag("Toggler").SetActive(false);
+		}
+		else if(tracker.GetComponent<Tracker>().unlocked && SceneManager.GetActiveScene().buildIndex == 0) {
+			GameObject.FindGameObjectWithTag("pg").GetComponent<Image>().enabled = false;
+		}
 		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
 			InitLvl1();
 		}
@@ -28,7 +40,6 @@ public class GameManager : MonoBehaviour {
 				Destroy(player);
 			}
 		}
-		//InitLvl1();
 	}
 	
 	// Update is called once per frame
@@ -41,22 +52,48 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void SetEnabledFilter(GameObject cry) {
+		cry.GetComponent<Image>().enabled = true;
+	}
+
+	public void SetDisabledFilter(GameObject cry) {
+		cry.GetComponent<Image>().enabled = false;
+	}
+
+	public void SetToggled(bool t) {
+		tracker.GetComponent<Tracker>().SetToggled(t);
+	}
+
 	private void InitLvl1() {
 		//Debug.Log("cry");
 		GetComponent<Spawner>().SpawnEnemies();
 		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(!tracker.GetComponent<Tracker>().toggled) {
+	        player.GetComponent<PlayerController>().SetAnimator("pg");
+        }
+        else {
+	        player.GetComponent<PlayerController>().SetAnimator("h");        	
+        }
 
 	}
 
 	private void InitLvl2() {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().Init(new Vector2(-7.6f, 10.35f));
+        if(!tracker.GetComponent<Tracker>().toggled) {
+	        player.GetComponent<PlayerController>().SetAnimator("pg");
+        }
+        else {
+	        player.GetComponent<PlayerController>().SetAnimator("h");        	
+        }
         GetComponent<Spawner>().SpawnSanta();
 		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
 		countText.enabled = false;
 	}
 
 	public void TriggerBossWin() {
+		tracker.GetComponent<Tracker>().unlocked = true;
 		SwitchScene(5);
 	}
 

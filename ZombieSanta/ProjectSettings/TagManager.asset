@@ -23,6 +23,10 @@ TagManager:
   - Health
   - EnemyCount
   - BossBar
+  - Tracker
+  - Toggler
+  - pg
+  - h
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject[] weapons;
 	public Image[] weaponIcons;
     public Vector2 starting = new Vector2(-7.6f, -6.3f);
+    public RuntimeAnimatorController pg;
+    public RuntimeAnimatorController h;
 
 	private int selectedWeapon;
 	private bool facingLeft;
@@ -54,6 +56,15 @@ public class PlayerController : MonoBehaviour {
         }
 
         GetComponent<PlayerStatsManager>().Init();
+    }
+
+    public void SetAnimator(string op) {
+    	if(op == "pg") {
+    		GetComponent<Animator>().runtimeAnimatorController = pg;
+    	}
+    	else {
+			GetComponent<Animator>().runtimeAnimatorController = h;
+    	}
     }
 	
 	// Update is called once per frame
