@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour {
 		if(SceneManager.GetActiveScene().buildIndex == 4) {
 			InitLvl2();
 		}
+		if(SceneManager.GetActiveScene().buildIndex == 5) {
+			GameObject player = GameObject.FindGameObjectWithTag("Player");
+			if(player != null) {
+				Destroy(player);
+			}
+		}
 		//InitLvl1();
 	}
 	
@@ -42,8 +48,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void InitLvl2() {
+		GetComponent<Spawner>().SpawnSanta();
 		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
-		countText.enabled = false;		
+		countText.enabled = false;
+	}
+
+	public void TriggerBossWin() {
+		SwitchScene(5);
 	}
 
 	public void SwitchScene(int lvl) {

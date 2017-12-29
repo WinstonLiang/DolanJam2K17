@@ -63,6 +63,8 @@ MonoBehaviour:
   - {fileID: 1048986615282240, guid: 5bf0e1cd5dab1c34eabce571f54a5e17, type: 2}
   - {fileID: 1367647421655438, guid: 9d52f8f661ddd114486caf0e5a90794c, type: 2}
   - {fileID: 1507161537440356, guid: c9bcf8dc6295d9449aa861bfd09fed47, type: 2}
+  santa: {fileID: 1670576656938770, guid: a2ba099a1a15e8e4ea0b97e7c1e7feb1, type: 2}
+  santaPos: {x: 10.28385, y: 12.21354}
   enemyCounts: 0100000001000000010000000100000001000000
   mapBounds: {fileID: 0}
   deathsplosion: {fileID: 1408642092104910, guid: f3ccbaa0720690a4690979c5fc136bfb,

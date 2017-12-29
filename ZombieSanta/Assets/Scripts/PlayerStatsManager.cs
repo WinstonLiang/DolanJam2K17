@@ -33,13 +33,13 @@ public class PlayerStatsManager : MonoBehaviour {
 
 		//game over
 		if (health <= 0){
-            Destroy(gameObject);
+	        Destroy(gameObject);
 			gameManager.GetComponent<GameManager> ().SwitchScene (2);
 		}
 	}
 
 	IEnumerator TriggerInvisibility() {
-		GetComponent<BoxCollider2D>().enabled = false;
+		Physics2D.IgnoreLayerCollision(11, 12, true);
 		for(int i = 1; i < 4; i++) {
 			Color color1 = gameObject.GetComponent<SpriteRenderer>().color; 
 			color1.a = .5f;
@@ -51,6 +51,6 @@ public class PlayerStatsManager : MonoBehaviour {
 			gameObject.GetComponent<SpriteRenderer>().color = color2;
 			yield return new WaitForSeconds(.1f*i);
 		}
-		GetComponent<BoxCollider2D>().enabled = true;
+		Physics2D.IgnoreLayerCollision(11, 12, false);
 	}
 }

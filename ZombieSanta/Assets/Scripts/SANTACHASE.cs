@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SANTACHASE : MonoBehaviour {
+public class SANTACHASE : chasePlayer {
 
-    public Transform MAIWAIFU;
-    public float speed;
     public float pauseTime;
     public float stompTime;
     public Sprite[] santaSprites;
@@ -16,24 +14,16 @@ public class SANTACHASE : MonoBehaviour {
     private bool spriteSwitch = false;
     private bool thrown = false;
 
-
-	// Use this for initialization
-	void Start () {
-        MAIWAIFU = GameObject.FindGameObjectWithTag("Player").transform;
-	}
-	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
         if (stomping)
         {
             if (!spriteSwitch)
             {
                 spriteSwitch = true;
-                if (gameObject.GetComponent<SpriteRenderer>().sprite == santaSprites[0])
-                    gameObject.GetComponent<SpriteRenderer>().sprite = santaSprites[1];
-                else
-                    gameObject.GetComponent<SpriteRenderer>().sprite = santaSprites[0];
+                GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
             }
+
             if (!thrown)
             {
                 Vector2 throwFrom = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
@@ -43,13 +33,15 @@ public class SANTACHASE : MonoBehaviour {
                 }
                 thrown = true;
             }
-            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, MAIWAIFU.position, speed * Time.deltaTime);
+            prevPos = transform.position;
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, target.position, speed * Time.deltaTime);
+            CheckAndFlip();
             stompTrack -= Time.deltaTime;
             if(stompTrack <= 0)
             {
                 thrown = false;
                 stomping = false;
-                spriteSwitch = false;
+                GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
                 stompTrack = stompTime;
             }
         }
@@ -61,6 +53,13 @@ public class SANTACHASE : MonoBehaviour {
                 stomping = true;
                 pauseTrack = pauseTime;
             }
+        }
+
+        if(health <= 0) {
+            // Spawn items
+            manager.GetComponent<Spawner>().explode(transform.position);
+            manager.GetComponent<GameManager>().TriggerBossWin();
+            Destroy(gameObject);
         }
 	}
 }

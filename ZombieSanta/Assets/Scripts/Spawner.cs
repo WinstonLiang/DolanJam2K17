@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 	public GameObject[] pickups;
 	public GameObject[] enemies;
+	public GameObject santa;
+	public Vector2 santaPos = new Vector2(10.28385f, 12.21354f);
 	public int[] enemyCounts;
 	public GameObject mapBounds;
     public GameObject deathsplosion;
@@ -27,6 +29,13 @@ public class Spawner : MonoBehaviour {
 				GetComponent<GameManager>().enemyCount++;
 			}
 		}
+	}
+
+	public void SpawnSanta() {
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		GameObject enemyClone = Instantiate(santa, santaPos, Quaternion.identity) as GameObject;
+		//Debug.Log("S:LDKFJL:SKDJF?");
+		enemyClone.GetComponent<chasePlayer>().Init(gameObject, player);
 	}
 
 	Vector2 GetSpawnPos() {

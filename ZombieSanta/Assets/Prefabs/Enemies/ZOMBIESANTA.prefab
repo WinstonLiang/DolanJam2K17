@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212516213276033992}
   - component: {fileID: 114549193766780888}
   - component: {fileID: 114740504453930198}
+  - component: {fileID: 61733129135776180}
+  - component: {fileID: 95154762755546116}
   m_Layer: 0
   m_Name: ZOMBIESANTA
   m_TagString: Untagged
@@ -42,6 +44,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61733129135776180
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670576656938770}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 16}
+    newSize: {x: 16, y: 16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
+--- !u!95 &95154762755546116
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670576656938770}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfe5640d5fc924b578c686b0dca0823e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114549193766780888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,8 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163dc889002992b44902d1353191c860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAIWAIFU: {fileID: 0}
+  target: {fileID: 0}
+  chaseRange: 0
   speed: 3
+  aggro: 0
+  health: 10
   pauseTime: 3
   stompTime: 1
   santaSprites:
