@@ -196,8 +196,9 @@ MonoBehaviour:
   speed: 2
   aggro: 0
   health: 10
+  pickups: []
   bulletObj: {fileID: 1181050415743306, guid: 3bea71a09f29247fd986d0132af7230b, type: 2}
-  projSpeed: 2
+  projSpeed: 4
   attackInterval: 3
 --- !u!114 &114608481037377596
 MonoBehaviour:

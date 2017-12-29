@@ -55,9 +55,6 @@ TagManager:
   - name: Background
     uniqueID: 2274708409
     locked: 0
-  - name: Obstacle
-    uniqueID: 3731415023
-    locked: 0
   - name: Weapons
     uniqueID: 3193623843
     locked: 0
@@ -69,4 +66,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2045752359
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3731415023
     locked: 0
