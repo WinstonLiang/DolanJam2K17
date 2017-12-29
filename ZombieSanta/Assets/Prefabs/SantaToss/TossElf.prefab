@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -73,7 +73,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa74c9e2e189a764bbee78ac4cae13e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4695814804625026, guid: b2840ba3cec1144d9a59a76535817e66, type: 2}
+  target: {fileID: 0}
+  manager: {fileID: 0}
+  flyTime: 2
+  spawns: {fileID: 1605168043799756, guid: 414d7eab360b50943924f623957bed8e, type: 2}
 --- !u!212 &212306896141673514
 SpriteRenderer:
   m_ObjectHideFlags: 1
