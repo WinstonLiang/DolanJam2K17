@@ -45,10 +45,13 @@ public class GameManager : MonoBehaviour {
 		//Debug.Log("cry");
 		GetComponent<Spawner>().SpawnEnemies();
 		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
+
 	}
 
 	private void InitLvl2() {
-		GetComponent<Spawner>().SpawnSanta();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().Init(new Vector2(-7.6f, 10.35f));
+        GetComponent<Spawner>().SpawnSanta();
 		countText = GameObject.FindGameObjectWithTag("EnemyCount").GetComponent<Text>();
 		countText.enabled = false;
 	}

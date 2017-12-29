@@ -12,18 +12,24 @@ public class PlayerStatsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameManager = GameObject.FindGameObjectWithTag ("GameManager");
-		GameObject ui = GameObject.FindGameObjectWithTag("PlayerUI");
-		foreach(Transform child in ui.transform) {
-			if(child.tag == "Health") {
-				healthbar = child.GetChild(0).gameObject.GetComponent<Image>();
-			}
-		}
-		maxHealth = health;
+        maxHealth = health;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void Init()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        GameObject ui = GameObject.FindGameObjectWithTag("PlayerUI");
+        foreach (Transform child in ui.transform)
+        {
+            if (child.tag == "Health")
+            {
+                healthbar = child.GetChild(0).gameObject.GetComponent<Image>();
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		healthbar.fillAmount = health/maxHealth;
 	}
 

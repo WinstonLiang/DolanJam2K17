@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public GameObject[] weapons;
 	public Image[] weaponIcons;
+    public Vector2 starting = new Vector2(-7.6f, -6.3f);
 
 	private int selectedWeapon;
 	private bool facingLeft;
@@ -21,26 +22,39 @@ public class PlayerController : MonoBehaviour {
 		else {
 			Destroy(gameObject);
 		}
-		weaponIcons = new Image[weapons.Length];
-		GameObject playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
-		foreach(Transform child in playerUI.transform) {
-			if(child.tag == "WeaponIcons") {
-				foreach(Transform weapon in child) {
-					weaponIcons[GetWeaponIndex(weapon.tag)] = weapon.GetComponent<Image>();
-				}
-			}
-		}
-		facingLeft = false;
-		selectedWeapon = 0;
-		for(int i = 1; i < weapons.Length; i++) {
-			weapons[i].GetComponent<SpriteRenderer>().enabled = false;
-		}
-		for(int i = 1; i < weaponIcons.Length - 1; i++) {
-			Color color1 = weaponIcons[i].color;
-			color1.a = .5f;
-			weaponIcons[i].color = color1;
-		}
+        Init(starting);
 	}
+
+    public void Init(Vector2 startPos)
+    {
+        transform.position = startPos;
+        weaponIcons = new Image[weapons.Length];
+        GameObject playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
+        foreach (Transform child in playerUI.transform)
+        {
+            if (child.tag == "WeaponIcons")
+            {
+                foreach (Transform weapon in child)
+                {
+                    weaponIcons[GetWeaponIndex(weapon.tag)] = weapon.GetComponent<Image>();
+                }
+            }
+        }
+        facingLeft = false;
+        selectedWeapon = 0;
+        for (int i = 1; i < weapons.Length; i++)
+        {
+            weapons[i].GetComponent<SpriteRenderer>().enabled = false;
+        }
+        for (int i = 1; i < weaponIcons.Length - 1; i++)
+        {
+            Color color1 = weaponIcons[i].color;
+            color1.a = .5f;
+            weaponIcons[i].color = color1;
+        }
+
+        GetComponent<PlayerStatsManager>().Init();
+    }
 	
 	// Update is called once per frame
 	void Update () {
