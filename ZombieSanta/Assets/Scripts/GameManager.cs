@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
 			InitLvl1();
 		}
-		//InitLvl1();
+		InitLvl1();
 	}
 	
 	// Update is called once per frame

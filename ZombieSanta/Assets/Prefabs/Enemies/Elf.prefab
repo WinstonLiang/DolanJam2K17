@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50339296905140422}
   - component: {fileID: 212063836541671878}
   - component: {fileID: 114822861973640810}
+  - component: {fileID: 95370960858945366}
   m_Layer: 12
   m_Name: Elf
   m_TagString: Enemy
@@ -151,6 +152,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.32}
   m_EdgeRadius: 0
+--- !u!95 &95370960858945366
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605168043799756}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae250424bafb34ba8acc93f7e3305ee7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114029415051197450
 MonoBehaviour:
   m_ObjectHideFlags: 1
