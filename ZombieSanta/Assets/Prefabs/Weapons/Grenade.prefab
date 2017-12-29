@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464900022685692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.621351, y: -0.8317916, z: -0.051994827}
+  m_LocalPosition: {x: 7.0613275, y: -1.0166192, z: -0.051994827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,9 +78,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.036410093, y: -0.022230148}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 3.3656046
 --- !u!61 &61828237696471104
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -180,7 +180,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1997023080
+  randomSeed: 908520380
   InitialModule:
     serializedVersion: 3
     enabled: 1

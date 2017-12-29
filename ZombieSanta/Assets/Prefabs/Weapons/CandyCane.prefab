@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 2
   target: Enemy
-  ttl: 4
+  ttl: 1.5
 --- !u!212 &212566755637624086
 SpriteRenderer:
   m_ObjectHideFlags: 1

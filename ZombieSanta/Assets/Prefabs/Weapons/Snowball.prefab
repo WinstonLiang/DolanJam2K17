@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1407587492636252
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   target: Enemy
-  ttl: 4
+  ttl: 1.5
 --- !u!114 &114744019994489606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a7afdcbfd5bda40a3d3107ac639bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
+  colors:
+  - {fileID: 1032802509092434}
+  - {fileID: 1998471099007090}
+  - {fileID: 1811420251504560}
 --- !u!198 &198364882007883624
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -420,8 +423,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.5
+      scalar: 0.35
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3781,8 +3784,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.5
+      scalar: 0.35
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7142,8 +7145,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.5
+      scalar: 0.35
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:

@@ -24,6 +24,7 @@ public class PlayerStatsManager : MonoBehaviour {
 
 		//game over
 		if (health <= 0){
+            Destroy(gameObject);
 			gameManager.GetComponent<GameManager> ().SwitchScene (2);
 		}
 	}

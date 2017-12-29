@@ -70,8 +70,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4733995835489552}
-  - component: {fileID: 114596730523560248}
   - component: {fileID: 212498664466697460}
+  - component: {fileID: 114037614636006020}
   m_Layer: 11
   m_Name: CandyCaneGun
   m_TagString: Candy Cane
@@ -253,6 +253,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114037614636006020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397900054269608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00f2682d9d1244e983c5cf8637fc4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
+  speed: 10
+  charges: 20
+  chargeIncrement: 10
+  cooldown: 0.5
 --- !u!114 &114179309578812150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,23 +312,7 @@ MonoBehaviour:
   speed: 0
   charges: 15
   chargeIncrement: 5
-  cooldown: 2
---- !u!114 &114596730523560248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1397900054269608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741c155fa3e664d84b6645a1cd6ad0c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
-  speed: 10
-  charges: 30
-  chargeIncrement: 15
-  cooldown: 1
+  cooldown: 1.5
 --- !u!114 &114803983080157276
 MonoBehaviour:
   m_ObjectHideFlags: 1
