@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212235085435862868}
   - component: {fileID: 198658536486796300}
   - component: {fileID: 199033366902077208}
-  - component: {fileID: 114944652574419144}
   - component: {fileID: 61956699316386154}
   - component: {fileID: 95854605704089906}
+  - component: {fileID: 114912424588649766}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Finish
@@ -87,7 +87,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114944652574419144
+--- !u!114 &114912424588649766
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
-  target: Enemy
-  ttl: 1
+  target: 
+  ttl: 4
 --- !u!198 &198658536486796300
 ParticleSystem:
   m_ObjectHideFlags: 1

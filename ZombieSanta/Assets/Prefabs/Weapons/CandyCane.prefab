@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5373a94df1ab34adfae54bb85000eeb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  dmg: 2
   target: Enemy
   ttl: 4
 --- !u!212 &212566755637624086

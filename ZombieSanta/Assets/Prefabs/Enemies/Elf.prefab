@@ -195,12 +195,7 @@ MonoBehaviour:
   chaseRange: 7
   speed: 3
   aggro: 0
-  health: 2
-  pickups:
-  - {fileID: 1448184715536914, guid: 433b26a22874a4b6f81c337a10adcd0f, type: 2}
-  - {fileID: 1848010267519704, guid: ef5a50be068cc428482c1e504726014a, type: 2}
-  - {fileID: 1131963062485876, guid: faaebf8c254bf4ec5b6f8c97b0d93af1, type: 2}
-  - {fileID: 1635951738326940, guid: 68411b6f2e46347348ff0eb611c0bdef, type: 2}
+  health: 1
 --- !u!114 &114822861973640810
 MonoBehaviour:
   m_ObjectHideFlags: 1
