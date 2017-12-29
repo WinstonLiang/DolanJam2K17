@@ -11,6 +11,8 @@ public class Milk : ProjectileAttack {
 	}
 
 	protected override void OnCollisionEnter2D(Collision2D other) {
-		// do nothing
+		if(other.gameObject.tag == target) {
+			other.gameObject.SendMessage("ApplyDamage", dmg);
+		}
 	}
 }
