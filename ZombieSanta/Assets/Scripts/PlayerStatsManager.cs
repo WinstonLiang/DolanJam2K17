@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatsManager : MonoBehaviour {
 	public int health;
+	private GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
+		gameManager = GameObject.FindGameObjectWithTag ("GameManager");
 		
 	}
 	
@@ -18,6 +21,11 @@ public class PlayerStatsManager : MonoBehaviour {
 	void ApplyDamage(int dmg) {
 		health -= dmg;
 		StartCoroutine("TriggerInvisibility");
+
+		//game over
+		if (health <= 0){
+			gameManager.GetComponent<GameManager> ().SwitchScene (2);
+		}
 	}
 
 	IEnumerator TriggerInvisibility() {
