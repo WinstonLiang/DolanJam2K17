@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour {
 	public GameObject[] enemies;
 	public int[] enemyCounts;
 	public GameObject mapBounds;
+    public GameObject deathsplosion;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +38,11 @@ public class Spawner : MonoBehaviour {
 		Debug.Log(spawnPos);
 		return spawnPos;
 	}
+
+    public void explode(Vector2 pos)
+    {
+        Instantiate(deathsplosion, pos, Quaternion.identity);
+    }
 
 	public void SpawnPickup(Vector3 pos) {
 		int randNum = Random.Range(0, 100);
