@@ -70,8 +70,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4733995835489552}
-  - component: {fileID: 114596730523560248}
   - component: {fileID: 212498664466697460}
+  - component: {fileID: 114037614636006020}
   m_Layer: 11
   m_Name: CandyCaneGun
   m_TagString: Candy Cane
@@ -146,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499890976712918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: -0.34, z: -0.024843452}
+  m_LocalPosition: {x: -7.6, y: -6.3, z: -0.024843452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070061658032902}
@@ -253,6 +253,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114037614636006020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397900054269608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00f2682d9d1244e983c5cf8637fc4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
+  speed: 10
+  charges: 20
+  chargeIncrement: 10
+  cooldown: 0.5
 --- !u!114 &114179309578812150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,8 +282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1407587492636252, guid: 8f75fdf2a126142178cbecc25f454664, type: 2}
   speed: 10
-  charges: 11
-  chargeIncrement: 5
+  charges: 30
+  chargeIncrement: 20
   cooldown: 0.1
 --- !u!114 &114376972738435868
 MonoBehaviour:
@@ -280,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3656652e62444a285308eed3e9508f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 5
 --- !u!114 &114582145897412840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,25 +310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1395116576444876, guid: b12b1d681dab7453e80247bbf4be724a, type: 2}
   speed: 0
-  charges: 12
+  charges: 15
   chargeIncrement: 5
-  cooldown: 2
---- !u!114 &114596730523560248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1397900054269608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741c155fa3e664d84b6645a1cd6ad0c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletObj: {fileID: 1306073317769624, guid: afdd0b11cfe384e6ca68a5f6c0937d90, type: 2}
-  speed: 10
-  charges: 10
-  chargeIncrement: 5
-  cooldown: 1
+  cooldown: 1.5
 --- !u!114 &114803983080157276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 1464900022685692, guid: 05875a6fe7dde42b7b040df047683542, type: 2}
-  speed: 4
-  charges: 10
-  chargeIncrement: 2
+  speed: 10
+  charges: 3
+  chargeIncrement: 1
   cooldown: 2
 --- !u!212 &212234893737504146
 SpriteRenderer:
