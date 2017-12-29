@@ -41,18 +41,25 @@ public class Spawner : MonoBehaviour {
 	public void SpawnPickup(Vector3 pos) {
 		int randNum = Random.Range(0, 100);
 		GameObject toSpawn;
-		if(randNum <= 10) {
-			toSpawn = pickups[0];
-		}
-		else if(randNum <= 30) {
-			toSpawn = pickups[1];
-		}
-		else if(randNum <= 60) {
-			toSpawn = pickups[2];
-		}
-		else {
-			toSpawn = pickups[3];
-		}
-		Instantiate(toSpawn, pos, Quaternion.identity);
+        if (randNum <= 50)
+        {
+            if (randNum <= 5)
+            {
+                toSpawn = pickups[0];
+            }
+            else if (randNum > 5 && randNum <= 15)
+            {
+                toSpawn = pickups[1];
+            }
+            else if (randNum > 15 && randNum <= 25)
+            {
+                toSpawn = pickups[2];
+            }
+            else
+            {
+                toSpawn = pickups[3];
+            }
+            Instantiate(toSpawn, pos, Quaternion.identity);
+        }
 	}
 }
