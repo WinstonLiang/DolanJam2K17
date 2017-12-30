@@ -21,7 +21,7 @@ public class HackyScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
     	if(other.gameObject.tag == "Player") {
-    		other.SendMessage("ApplyDamage", transform.parent.GetComponent<Attack>().dmg);
+    		other.gameObject.SendMessage("ApplyDamage", transform.parent.GetComponent<Attack>().dmg);
     	}
     }
 }
