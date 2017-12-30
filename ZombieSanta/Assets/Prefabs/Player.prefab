@@ -286,7 +286,7 @@ MonoBehaviour:
   bulletObj: {fileID: 1407587492636252, guid: 8f75fdf2a126142178cbecc25f454664, type: 2}
   speed: 10
   charges: 50
-  chargeIncrement: 30
+  chargeIncrement: 40
   cooldown: 0.1
 --- !u!114 &114376972738435868
 MonoBehaviour:
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3656652e62444a285308eed3e9508f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 7
   healthbar: {fileID: 0}
   gameCamera: {fileID: 0}
 --- !u!114 &114582145897412840
