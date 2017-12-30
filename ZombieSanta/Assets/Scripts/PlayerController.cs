@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour {
 
     public void Init(Vector2 startPos)
     {
+    	for(int i = 0; i < weapons.Length() - 1; i++) {
+    		weapons[i].GetComponent<Weapon>().StopAttack();
+    	}
+    	Physics2D.IgnoreLayerCollision(11, 12, false);
         transform.position = startPos;
         weaponIcons = new Image[weapons.Length];
         GameObject playerUI = GameObject.FindGameObjectWithTag("PlayerUI");

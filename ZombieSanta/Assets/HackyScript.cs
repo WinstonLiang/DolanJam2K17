@@ -18,4 +18,10 @@ public class HackyScript : MonoBehaviour {
     {
         transform.parent.GetComponent<SANTACHASE>().ApplyDamage(dmg);
     }
+
+    void OnCollisionEnter2D(Collision2D other) {
+    	if(other.gameObject.tag == "Player") {
+    		other.SendMessage("ApplyDamage", transform.parent.GetComponent<Attack>().dmg);
+    	}
+    }
 }
