@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour {
 					break;
 			}
 			if(prevWeapon != selectedWeapon) {
+				weapons[prevWeapon].GetComponent<Weapon>().StopAttack();
 				Color color1 = weaponIcons[prevWeapon].color;
 				color1.a = .5f;
 				Color color2 = weaponIcons[selectedWeapon].color;
