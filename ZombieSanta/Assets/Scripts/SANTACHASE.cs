@@ -55,7 +55,7 @@ public class SANTACHASE : chasePlayer {
                 Vector2 throwFrom = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
                 for(int i = 0; i < Random.Range(1,3); i++)
                 {
-                    Instantiate(minions[(int)Random.Range(0, minions.Length - 0.1f)],throwFrom,Quaternion.identity);
+                    Instantiate(minions[Random.Range(0, minions.Length - 1)],throwFrom,Quaternion.identity);
                 }
                 thrown = true;
             }
