@@ -43,6 +43,7 @@ public class PlayerStatsManager : MonoBehaviour {
 		//game over
 		if (health <= 0){
 	        Destroy(gameObject);
+	        Physics2D.IgnoreLayerCollision(11, 12, false);
 			gameManager.GetComponent<GameManager> ().SwitchScene (2);
 		}
 	}

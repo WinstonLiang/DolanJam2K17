@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(SceneManager.GetActiveScene().buildIndex == 1) { // If lvl 1:
 			if(enemyCount == 0) {
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().StopAttacking();
 				SwitchScene(4);
 			}
 			countText.text = "Enemies: " + enemyCount.ToString();

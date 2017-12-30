@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour {
 
 	public void SpawnEnemies() {
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		Debug.Log("player: " + player.tag);
 		for(int i = 0; i < enemies.Length; i++) {
 			for(int j = 0; j < enemyCounts[i]; j++) {
 				GameObject enemyClone = Instantiate(enemies[i], GetSpawnPos(), Quaternion.identity) as GameObject;

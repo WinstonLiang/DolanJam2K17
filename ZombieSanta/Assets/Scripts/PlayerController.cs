@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
         facingLeft = false;
+        GetComponent<SpriteRenderer>().flipX = false;
         selectedWeapon = 0;
         for (int i = 1; i < weapons.Length; i++)
         {
@@ -85,10 +86,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	private void Flip() {
-		Vector3 facingPos =  transform.localScale;
-		facingPos.x *= -1;
+		//Vector3 facingPos =  transform.localScale;
+		//facingPos.x *= -1;
 		facingLeft = !facingLeft;
-		transform.localScale = facingPos;
+		//transform.localScale = facingPos;
+		GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
 	}
 
 	private void Move() {
@@ -166,6 +168,10 @@ public class PlayerController : MonoBehaviour {
 			weapons[3].GetComponent<Weapon>().Attack();
 		}
 
+	}
+
+	public void StopAttacking() {
+		weapons[selectedWeapon].GetComponent<Weapon>().StopAttack();		
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
