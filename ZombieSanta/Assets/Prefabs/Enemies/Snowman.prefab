@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1367647421655438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.26, y: -3.66, z: 0.30859375}
+  m_LocalPosition: {x: 0.54217315, y: -6.3828874, z: 0.30859375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4545167129632074}
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04917997, y: 0.016393423}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,7 +150,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.0491871, y: 1.7049203}
   m_EdgeRadius: 0
 --- !u!95 &95341008773934858
 Animator:
@@ -196,10 +196,9 @@ MonoBehaviour:
   speed: 2
   aggro: 0
   health: 10
-  pickups: []
   bulletObj: {fileID: 1181050415743306, guid: 3bea71a09f29247fd986d0132af7230b, type: 2}
-  projSpeed: 4
-  attackInterval: 3
+  projSpeed: 5
+  attackInterval: 2
 --- !u!114 &114608481037377596
 MonoBehaviour:
   m_ObjectHideFlags: 1

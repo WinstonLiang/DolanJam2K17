@@ -15,7 +15,7 @@ public class SANTACHASE : chasePlayer {
     private bool stomping;
     private bool spriteSwitch = false;
     private bool thrown = false;
-    private bool collider = false;
+    private bool colliderS = false;
     public Image healthBar;
     private float maxHealth;
 
@@ -35,17 +35,17 @@ public class SANTACHASE : chasePlayer {
                 spriteSwitch = true;
                 GetComponent<Animator>().SetBool("SantaSwitch", !GetComponent<Animator>().GetBool("SantaSwitch"));
 
-                if (collider)
+                if (colliderS)
                 {
                     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
                     childCollider.GetComponent<PolygonCollider2D>().enabled = false;
-                    collider = false;
+                    colliderS = false;
                 }
                 else
                 {
                     gameObject.GetComponent<PolygonCollider2D>().enabled = false;
                     childCollider.GetComponent<PolygonCollider2D>().enabled = true;
-                    collider = true;
+                    colliderS = true;
                 }
 
             }
@@ -53,9 +53,9 @@ public class SANTACHASE : chasePlayer {
             if (!thrown)
             {
                 Vector2 throwFrom = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
-                for(int i = 0; i < Random.Range(1,5); i++)
+                for(int i = 0; i < Random.Range(1,3); i++)
                 {
-                    Instantiate(minions[(int)Random.Range(0, minions.Length - 0.1f)],throwFrom,Quaternion.identity);
+                    Instantiate(minions[Random.Range(0, minions.Length - 1)],throwFrom,Quaternion.identity);
                 }
                 thrown = true;
             }
