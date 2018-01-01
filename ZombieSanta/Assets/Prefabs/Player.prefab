@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3656652e62444a285308eed3e9508f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 7
+  health: 5
   healthbar: {fileID: 0}
   gameCamera: {fileID: 0}
 --- !u!114 &114582145897412840
