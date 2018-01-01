@@ -95,6 +95,10 @@ public class PlayerController : MonoBehaviour {
 		facingLeft = !facingLeft;
 		//transform.localScale = facingPos;
 		GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+        foreach(GameObject wep in weapons)
+        {
+            wep.GetComponent<SpriteRenderer>().flipX = !wep.GetComponent<SpriteRenderer>().flipX;
+        }
 	}
 
 	private void Move() {

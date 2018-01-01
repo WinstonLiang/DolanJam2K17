@@ -147,6 +147,8 @@ MonoBehaviour:
   wallingTree: {fileID: 1997152021367320, guid: 7190a9f507e1ffa4f8156642bb399b3f,
     type: 2}
   tileOffset: 1
+  topx: -12
+  topy: 36
 --- !u!4 &155619300
 Transform:
   m_ObjectHideFlags: 0

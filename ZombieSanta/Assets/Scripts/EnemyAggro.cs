@@ -20,7 +20,7 @@ public class EnemyAggro : MonoBehaviour {
             if (other.gameObject.tag == "Enemy")
             {
                 if (other.gameObject.GetComponent<chasePlayer>() != null && other.gameObject.GetComponent<chasePlayer>().aggro
-                    && other.gameObject.GetComponentInChildren<EnemyAggro>().chain < 1)
+                    && other.gameObject.GetComponentInChildren<EnemyAggro>().chain < 2)
                 {
                     transform.parent.gameObject.GetComponent<chasePlayer>().aggro = true;
                     transform.parent.gameObject.GetComponent<Animator>().SetBool("moving", true);

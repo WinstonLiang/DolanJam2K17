@@ -111,7 +111,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
 --- !u!58 &58956758517837972
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   chaseRange: 0
   speed: 2
   aggro: 0
-  health: 20
+  health: 15
 --- !u!114 &114427846327193360
 MonoBehaviour:
   m_ObjectHideFlags: 1
